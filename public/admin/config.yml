@@ -2,8 +2,8 @@ backend:
   name: github
   repo: ardynaskela/jan-przegendza
   branch: master
-  site_domain: ardynaskela-jan-przegendza-y4sr.vercel.app
-  base_url: https://ardynaskela-jan-przegendza-y4sr.vercel.app
+  site_domain: jan-przegendza.vercel.app
+  base_url: https://jan-przegendza.vercel.app
   auth_endpoint: oauth
 
 media_folder: "public/uploads"
