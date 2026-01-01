@@ -22,6 +22,7 @@
     "astro-decap-cms-oauth": "^0.5.1",
     "astro-loading-indicator": "^0.7.0",
     "clsx": "^2.1.1",
+    "marked": "^17.0.1",
     "motion": "^12.9.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
