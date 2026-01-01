@@ -1,1 +1,20 @@
+backend:
+  name: github
+  repo: ardynaskela/jan-przegendza
+  branch: master
+  site_domain: ardynaskela-jan-przegendza-y4sr.vercel.app
+  base_url: https://ardynaskela-jan-przegendza-y4sr.vercel.app
+  auth_endpoint: oauth
 
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
