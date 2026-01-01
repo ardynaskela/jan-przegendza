@@ -77,15 +77,21 @@ type MobileLinkProps = {
 };
 
 function MobileLink({ href, className, children }: MobileLinkProps) {
-    return (
-        <motion.a
-            href={href}
-            initial={{ transform: "translateY(100px)", filter: "blur(20px)", opacity: 0 }}
-            transition={{ type: "spring", stiffness: 25, damping: 2, mass: 0.1 }}
-            animate={{ transform: "translateY(0px)", filter: "blur(0px)", opacity: 1 }}
-            exit={{ transform: "translateY(100px)", filter: "blur(20px)", opacity: 0 }}
-            className={clsx("w-fit flex items-center justify-center gap-3 text-lg sm:text-2xl text-zinc-100 cursor-pointer", className)}>
-            {children}
-        </motion.a>
-    );
+  return (
+    <motion.a
+      href={href}
+      initial={{ transform: "translateY(100px)", filter: "blur(20px)", opacity: 0 }}
+      transition={{ type: "spring", stiffness: 25, damping: 2, mass: 0.1 }}
+      animate={{ transform: "translateY(0px)", filter: "blur(0px)", opacity: 1 }}
+      exit={{ transform: "translateY(100px)", filter: "blur(20px)", opacity: 0 }}
+      className={clsx(
+        "w-fit font-bold text-white tracking-tight leading-none",
+        "text-4xl sm:text-6xl md:text-7xl",
+        "cursor-pointer hover:text-zinc-50/90 transition",
+        className
+      )}
+    >
+      {children}
+    </motion.a>
+  );
 }
