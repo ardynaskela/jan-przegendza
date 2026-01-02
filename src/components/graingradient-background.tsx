@@ -1,4 +1,4 @@
-import { GrainGradient } from '@paper-design/shaders-react';
+import { GrainGradient, type GrainGradientProps } from "@paper-design/shaders-react";
 
 export default function GrainGradientBackground(props: GrainGradientProps) {
     
