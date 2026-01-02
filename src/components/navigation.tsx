@@ -75,7 +75,7 @@ function MobileLink({ href, className, children }: MobileLinkProps) {
       exit={{ transform: "translateY(100px)", filter: "blur(20px)", opacity: 0 }}
       className={clsx(
         "w-fit font-bold text-white tracking-tight leading-none",
-        "text-6xl sm:text-7xl md:text-8xl",
+        "text-5xl sm:text-6xl md:text-7xl",
         "cursor-pointer hover:text-zinc-50/90 transition",
         className
       )}
