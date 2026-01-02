@@ -63,7 +63,7 @@ export default function Navigation({ children }: { children: React.ReactNode; })
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="1.5"
+    strokeWidth="1.4"
     strokeLinecap="round"
     initial={false}
     animate={isOpen ? "open" : "closed"}
