@@ -44,17 +44,61 @@ export default function Navigation({ children }: { children: React.ReactNode; })
                 }
             </AnimatePresence>
 
-                             <motion.button
-                             type="button"
-                             onClick={() => setIsOpen((prev) => !prev)}
-                            className={clsx(
-                                  "fixed right-4 bottom-6 sm:right-8 sm:bottom-8 z-50",
-                                 "w-fit text-base sm:text-2xl px-5 py-2 rounded-full transition-all duration-300 ease-in-out whitespace-nowrap",
-                                  "text-zinc-900 bg-zinc-100 hover:outline-2 outline-offset-2 outline-zinc-100",
-                                   )}
-                                   >
-                                    {isOpen ? "Close" : "Menu"}
-                                    </motion.button>
+<motion.button
+  type="button"
+  aria-label={isOpen ? "Close menu" : "Open menu"}
+  aria-expanded={isOpen}
+  onClick={() => setIsOpen((prev) => !prev)}
+  className={clsx(
+    "fixed right-4 bottom-6 sm:right-8 sm:bottom-8 z-50",
+    "w-12 h-12 sm:w-14 sm:h-14 rounded-full",
+    "grid place-items-center",
+    "text-zinc-900 bg-zinc-100 hover:outline-2 outline-offset-2 outline-zinc-100",
+    "transition-all duration-300 ease-in-out"
+  )}
+>
+  <motion.svg
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    initial={false}
+    animate={isOpen ? "open" : "closed"}
+  >
+    {/* top */}
+    <motion.path
+      d="M4 7H20"
+      variants={{
+        closed: { rotate: 0, translateY: 0 },
+        open: { rotate: 45, translateY: 5 },
+      }}
+      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+      style={{ transformOrigin: "12px 12px" }}
+    />
+    {/* middle */}
+    <motion.path
+      d="M4 12H20"
+      variants={{
+        closed: { opacity: 1 },
+        open: { opacity: 0 },
+      }}
+      transition={{ duration: 0.15 }}
+    />
+    {/* bottom */}
+    <motion.path
+      d="M4 17H20"
+      variants={{
+        closed: { rotate: 0, translateY: 0 },
+        open: { rotate: -45, translateY: -5 },
+      }}
+      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+      style={{ transformOrigin: "12px 12px" }}
+    />
+  </motion.svg>
+</motion.button>
         </div>
     );
 }
